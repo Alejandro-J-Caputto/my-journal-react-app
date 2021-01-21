@@ -184,3 +184,91 @@ body {
     background-color: red; }
   .auth__alert-success {
     background-color: green; }
+
+.journal__main-content {
+  display: flex; }
+
+.journal__sidebar {
+  background-color: #363636;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 450px;
+  height: 100vh; }
+  .journal__sidebar-navbar {
+    display: flex;
+    justify-content: space-between; }
+    .journal__sidebar-navbar h3 {
+      font-weight: lighter; }
+
+.journal__new-entry {
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  display: flex;
+  width: 100px;
+  margin-top: 30px;
+  transition: color .3s ease, transform 1s ease; }
+  .journal__new-entry:hover {
+    color: #e6e6e6;
+    transform: scale(1.1) translateY(-15px); }
+
+.journal__entries {
+  flex: 0 0 auto;
+  margin-top: 20px;
+  overflow-y: scroll;
+  height: 450px; }
+  .journal__entries::-webkit-scrollbar {
+    display: none; }
+  .journal__entries:hover::-webkit-scrollbar {
+    display: none; }
+
+.journal__entrie {
+  cursor: pointer;
+  background-color: white;
+  color: #363636;
+  border-radius: 4px;
+  display: flex;
+  flex: 1 1 auto;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding-right: 2px;
+  margin-right: 2px; }
+  .journal__entrie-picture {
+    min-height: 100px;
+    max-height: 125px;
+    min-width: 100px;
+    flex: 0 0 auto; }
+  .journal__entrie-body {
+    margin-left: 10px; }
+  .journal__entrie-title {
+    font-size: 1.4rem;
+    font-weight: bold; }
+  .journal__entrie-content {
+    font-size: 1.3rem; }
+  .journal__entrie-date {
+    padding-right: 2px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center; }
+    .journal__entrie-date span {
+      font-size: 1.4rem;
+      margin-top: 10px; }
+
+.default__main-content {
+  align-items: center;
+  background-color: #5c62c5;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 70vw; }
+  .default__main-content p {
+    text-align: center; }

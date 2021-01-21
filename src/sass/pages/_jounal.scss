@@ -1,0 +1,107 @@
+.journal {
+  &__main-content{
+    display: flex;
+    
+  }
+  &__sidebar {
+    background-color: $color-dark-grey;
+        
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 450px;
+    height: 100vh;
+    &-navbar {
+      display: flex;
+      justify-content: space-between;
+      
+      & h3 {
+        font-weight: lighter;
+      }
+    }
+  }
+
+  &__new-entry {
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    display: flex;
+    width: 100px;
+    margin-top: 30px;
+    transition: color .3s ease, transform 1s ease;
+    &:hover {
+      color: darken($color: $white, $amount: 10);
+      transform: scale(1.1) translateY(-15px); 
+      
+    }
+  }
+  &__entries {
+    flex: 0 0 auto;
+    
+    
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 450px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &:hover::-webkit-scrollbar{
+      display: none;
+    }
+  }
+  &__entrie {
+    cursor: pointer;
+    background-color: white;
+    color: $color-dark-grey;
+    border-radius: 4px;
+    display: flex;
+    flex: 1 1 auto;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding-right: 2px;
+    margin-right: 2px;
+
+
+
+    &-picture {
+      min-height: 100px;
+      max-height: 125px;
+      min-width: 100px;
+      flex: 0 0 auto;
+    }
+    &-body {
+      
+      margin-left: 10px;
+    }
+    &-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    &-content {
+      font-size: 1.3rem;
+    }
+    &-date {
+
+      padding-right: 2px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      & span {
+        font-size: 1.4rem;
+        margin-top: 10px;
+      }
+    }
+
+  }
+
+
+}
+
+
+
