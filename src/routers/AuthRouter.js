@@ -9,10 +9,15 @@ import { LoginScreen } from '../components/Auth/LoginScreen';
 import { RegisterScreen } from '../components/Auth/RegisterScreen';
 export const AuthRouter = () => {
   return (
-    <Switch>
-      <Route exact path="/auth/login" component={LoginScreen} />
-      <Route exact path="/auth/register" component = {RegisterScreen} />
-      <Redirect to="/auth/login"/>
-    </Switch>
+    <div className="auth__main">
+      <div className="auth__main-container">
+        <Switch>
+          <Route exact path="/auth/login" component={LoginScreen} />
+          <Route exact path="/auth/register" component = {RegisterScreen} />
+          <Redirect to="/auth/login"/>
+        </Switch>
+
+      </div>
+    </div>
   )
 }
