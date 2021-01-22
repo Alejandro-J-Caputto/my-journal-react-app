@@ -1,4 +1,5 @@
 import React from 'react'
+import { NotesScreen } from '../notes/NotesScreen'
 import { DefaultView } from './DefaultView'
 import { Sidebar } from './journalComponents/Sidebar'
 
@@ -8,7 +9,8 @@ export const JournalScreen = () => {
       <Sidebar />
 
       <main className="main">
-        <DefaultView />
+        {/* <DefaultView /> */}
+        <NotesScreen />
       </main>
     </div>
   )

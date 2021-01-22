@@ -17,11 +17,11 @@ html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
 
 html, body {
-  height: 100vh;
-  width: 100vw; }
+  background-color: whitesmoke; }
 
 .mt-1 {
   margin-top: 5px; }
@@ -78,9 +78,21 @@ body {
   color: white;
   cursor: pointer;
   font-size: 1.2rem;
-  padding: 7px 10px 7px 10px; }
+  padding: 7px 10px 7px 10px;
+  transition: color 1s ease; }
   .btn:focus {
     outline: none; }
+  .btn:hover {
+    color: #cccccc; }
+  .btn:hover::after {
+    display: block;
+    height: 2px;
+    content: " ";
+    width: 100%;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 5px;
+    transition: background-color 2s ease; }
   .btn-block {
     width: 100%; }
   .btn-primary {
@@ -140,7 +152,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #5c62c5;
-  height: 100vh; }
+  height: 95vh; }
   .auth__main-container {
     background-color: white;
     box-shadow: 0px 3px #363636;
@@ -185,18 +197,84 @@ body {
   .auth__alert-success {
     background-color: green; }
 
+.notes__main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: stretch;
+  background-color: #5c62c5; }
+
+.notes__appBar {
+  align-items: center;
+  height: 70px;
+  background-color: #3e45b0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px 10px 20px; }
+  .notes__appBar button:last-of-type {
+    margin-right: 50px; }
+
+.notes__content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  padding: 20px;
+  overflow-y: scroll;
+  width: calc(100vw - 30vw);
+  justify-content: stretch; }
+
+.notes__form {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 70%; }
+
+.notes__input-title, .notes__textarea {
+  border: none; }
+  .notes__input-title:focus, .notes__textarea:focus {
+    outline: none; }
+
+.notes__input-title::placeholder, .notes__textarea::placeholder {
+  color: white; }
+
+.notes__textarea {
+  margin-top: 20px;
+  flex: 1 1 auto;
+  background-color: #5c62c5;
+  font-size: 2rem;
+  color: white;
+  font-family: inherit;
+  resize: none;
+  height: 300px; }
+
+.notes__input-title {
+  color: white;
+  font-size: 3rem;
+  background-color: #5c62c5; }
+
+.notes__image img {
+  margin-top: 20px;
+  height: 400px;
+  width: 600px;
+  box-shadow: 5px 5px #363636;
+  border-radius: 5px; }
+
 .journal__main-content {
-  display: flex; }
+  display: flex;
+  height: 100vh;
+  width: 100%; }
 
 .journal__sidebar {
   background-color: #363636;
+  flex-shrink: 0;
   color: white;
   display: flex;
   flex-direction: column;
   height: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  width: 450px;
+  width: 30%;
   height: 100vh; }
   .journal__sidebar-navbar {
     display: flex;
@@ -220,9 +298,10 @@ body {
 
 .journal__entries {
   flex: 0 0 auto;
-  margin-top: 20px;
+  margin-top: 30px;
   overflow-y: scroll;
-  height: 450px; }
+  height: 500px;
+  position: relative; }
   .journal__entries::-webkit-scrollbar {
     display: none; }
   .journal__entries:hover::-webkit-scrollbar {
@@ -230,6 +309,7 @@ body {
 
 .journal__entrie {
   cursor: pointer;
+  height: 80px;
   background-color: white;
   color: #363636;
   border-radius: 4px;
@@ -238,14 +318,21 @@ body {
   margin-bottom: 10px;
   overflow: hidden;
   padding-right: 2px;
-  margin-right: 2px; }
+  margin-right: 2px;
+  transition: transform .2s ease, border .4s ease; }
+  .journal__entrie:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+    transform: translateX(10px);
+    border: 2px solid #5c62c5; }
   .journal__entrie-picture {
-    min-height: 100px;
-    max-height: 125px;
-    min-width: 100px;
+    height: 120px;
+    width: 120px;
     flex: 0 0 auto; }
   .journal__entrie-body {
-    margin-left: 10px; }
+    height: 100px;
+    margin-left: 10px;
+    overflow: hidden;
+    flex: 0 1 auto; }
   .journal__entrie-title {
     font-size: 1.4rem;
     font-weight: bold; }
@@ -269,6 +356,7 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  width: 70vw; }
+  width: 70vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)); }
   .default__main-content p {
     text-align: center; }

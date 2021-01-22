@@ -6,7 +6,7 @@ export const JournalEntrie = () => {
       <div className="journal__entrie-picture"
         style={{
           backgroundSize: 'cover',
-          backgroundImage: 'url(./assets/major-mira-killian.jpg)'
+          backgroundImage: 'url(./assets/major.png)'
         }}> 
         </div>
         <div className = "journal__entrie-body">

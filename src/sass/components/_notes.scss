@@ -1,0 +1,75 @@
+.notes {
+
+
+  &__main {
+   display: flex;
+   flex-direction: column;
+   height:100%;
+    align-items: stretch;
+  //  width: 100%;
+   background-color: $color-primary;
+
+ }
+ &__appBar {
+   align-items: center;
+   height: 70px;
+   background-color: darken($color: $color-primary, $amount: 10);
+   color: white;
+   display: flex;
+   justify-content: space-between;
+   padding: 10px 20px 10px 20px;
+  //  width: 97%;
+
+  & button:last-of-type {
+    margin-right: 50px;
+  }
+ }
+ &__content {
+   display: flex;
+   flex-direction: column;
+   height: calc(100vh - 100px);
+   padding: 20px;
+   overflow-y: scroll;
+   width: calc(100vw - 30vw);
+   justify-content: stretch;
+ }
+ &__form {
+  align-self: center;
+   display: flex;
+   flex-direction: column;
+   width: 70%;
+ }
+ &__input-title, &__textarea {
+   border: none;
+   &:focus{
+     outline: none;
+   }
+ }
+ &__input-title::placeholder, &__textarea::placeholder {
+   color: white;
+ }
+ &__textarea {
+   margin-top: 20px;
+   flex: 1 1 auto;
+   background-color: $color-primary;
+   font-size: 2rem;
+   color: white;
+   font-family: inherit;
+   resize: none;
+   height: 300px;
+ }
+ &__input-title {
+   color: white;
+   font-size: 3rem;
+   background-color: $color-primary;
+
+ }
+
+ &__image img{
+   margin-top: 20px;
+   height: 400px;
+   width: 600px;
+   box-shadow: 5px 5px $color-dark-grey;
+   border-radius: 5px;
+ }
+}
