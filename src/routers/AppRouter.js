@@ -4,7 +4,6 @@ import {firebase} from '../firebase/firebaseConfig'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
   Redirect,
 } from "react-router-dom";
 import { JournalScreen } from '../components/journal/JournalScreen';

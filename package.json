@@ -1,4 +1,5 @@
-{
+{ 
+  "document": "https://alejandro-j-caputto.github.io/my-journal-react-app/",
   "name": "journal-app",
   "version": "0.1.0",
   "private": true,
