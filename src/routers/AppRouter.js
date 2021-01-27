@@ -12,6 +12,8 @@ import { AuthRouter } from './AuthRouter';
 import { login } from '../reducers/actions/authActions';
 import { PublicRoutes } from './PublicRoutes';
 import { PrivateRoutes } from './PrivateRoutes';
+import { loadNotes } from '../helpers/loadNotes';
+import { setNotes } from '../reducers/actions/notes';
 export const AppRouter = () => {
 
 
@@ -20,10 +22,12 @@ export const AppRouter = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged(async (user) => {
       if(user?.uid) {
         dispatch(login(user.uid, user.displayName))
         setIsLoggedIn(true)
+        const notes =  await loadNotes(user.uid)
+        dispatch(setNotes(notes));
       } else {
         setIsLoggedIn(false)
         

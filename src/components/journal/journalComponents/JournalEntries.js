@@ -1,17 +1,20 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { JournalEntrie } from './JournalEntrie';
 
 export const JournalEntries = () => {
 
 
-const entries = [1,2,3,4,5,6,7,8,9,10];
+const {notes} = useSelector(state => state.notes)
 
 
   return (
-    <div className="journal__entries">
+    <div className="journal__entries animate__animated animate__fadeIn">
       {
-        entries.map(value => {
-          return <JournalEntrie key={value} />
+        notes.map(note => {
+          return <JournalEntrie
+          {...note}
+          key={note.id} />
         })
       }
     </div>

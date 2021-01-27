@@ -10,22 +10,22 @@
     outline: none;
     
   }
-  &:hover {
-  color: darken($color: white, $amount: 20);
+  // &:hover {
+  // color: darken($color: white, $amount: 20);
 
-  }
-  &:hover::after {
-    // text-decoration: underline;
-    display: block;
-    height: 2px;
-    content: " ";
-    width: 100%;
-    background-color: white;
-    margin: 0 auto;
-    margin-top: 5px;
-    transition: background-color 2s ease;
+  // }
+  // &:hover::after {
+  //   // text-decoration: underline;
+  //   display: block;
+  //   height: 2px;
+  //   content: " ";
+  //   width: 100%;
+  //   background-color: white;
+  //   margin: 0 auto;
+  //   margin-top: 5px;
+  //   transition: background-color 2s ease;
     
-  }
+  // }
   
   &-block {
     width: 100%;
