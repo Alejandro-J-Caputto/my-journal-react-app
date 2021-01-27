@@ -10,6 +10,8 @@ import {
 import { JournalScreen } from '../components/journal/JournalScreen';
 import { AuthRouter } from './AuthRouter';
 import { login } from '../reducers/actions/authActions';
+import { PublicRoutes } from './PublicRoutes';
+import { PrivateRoutes } from './PrivateRoutes';
 export const AppRouter = () => {
 
 
@@ -21,11 +23,15 @@ export const AppRouter = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if(user?.uid) {
         dispatch(login(user.uid, user.displayName))
-        setCheckData(false)
         setIsLoggedIn(true)
+      } else {
+        setIsLoggedIn(false)
+        
       }
+      setCheckData(false)
     });
   }, [dispatch, setCheckData, setIsLoggedIn])
+  
   if(checkData){
     return <h1>Wait...</h1>
   }
@@ -33,8 +39,10 @@ export const AppRouter = () => {
    <Router>
      <div>
        <Switch>
-         <Route path="/auth" component={AuthRouter} />
-         <Route exact path="/"  component={JournalScreen} />
+         <PublicRoutes isLoggedIn={isLoggedIn} path="/auth" component={AuthRouter} />
+         {/* <Route path="/auth" component={AuthRouter} /> */}
+         <PrivateRoutes isLoggedIn={isLoggedIn} exact path="/" component={JournalScreen} />
+         {/* <Route exact path="/"  component={JournalScreen} /> */}
          <Redirect to="/auth/login"/>
        </Switch>
      </div>
